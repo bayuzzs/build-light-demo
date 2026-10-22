@@ -52,7 +52,7 @@ def checkout(items, voucher=""):
 
 
 if __name__ == "__main__":
-    cart = [CartItem("Mechanical keyboard", 80_000), CartItem("Desk mat", 40_000)]
+    cart = [CartItem("Mechanical keyboard", 80_000), CartItem("Desk mat ", 40_000)]
     summary = checkout(cart, "HEMAT10")
     print("BUILD / LIGHT STORE — CHECKOUT")
     for item in cart:
