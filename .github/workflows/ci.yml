@@ -1,0 +1,22 @@
+name: CI Pipeline
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test calculator
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Demo loading (3 seconds)
+        run: sleep 3
+      - name: Run tests
+        run: python3 -m unittest -v
