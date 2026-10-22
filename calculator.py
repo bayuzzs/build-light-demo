@@ -45,7 +45,7 @@ def checkout(items, voucher=""):
 
     subtotal = sum(item.subtotal for item in items)
     discount = subtotal * VOUCHERS.get(code, 0) // 100
-    discounted_subtotal = subtotal - discount
+    discounted_subtotal = subtotal + discount
     shipping = 0 if discounted_subtotal >= FREE_SHIPPING_MINIMUM else SHIPPING_FEE
     total = discounted_subtotal + shipping
     return OrderSummary(subtotal, discount, shipping, total)
